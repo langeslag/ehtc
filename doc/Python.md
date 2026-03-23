@@ -31,7 +31,7 @@ subtitle: "Guide for students of Medieval Words, Modern Methods"
 
 # Requirements
 
-This document assumes you have installed Anaconda (or else another Python distribution plus Jupyter), as well as VS Code with the extensions entitled Python, Python Environments, and Jupyter (all three by Microsoft), as described in the [Software guide](https://github.com/langeslag/ehtc/blob/main/doc/Software.pdf).
+This document assumes you have installed Anaconda (or else another Python distribution plus Jupyter), as well as VS Code with the extensions entitled Python, Python Environments, and Jupyter (all three by Microsoft), as described in the [software guide](https://github.com/langeslag/ehtc/blob/main/doc/Software.pdf).
 
 # Overview
 
@@ -43,7 +43,7 @@ Python is an **interpreted programming language**, also known as a **scripting l
 
 Many of the more accessible Python textbooks and tutorials still expect you to enter your code directly into an interpreter, which is a little arcane and rather frustrating whenever you make an error, or else to save your code as `.py` script files and run those from the command line. In education, these options have long been overtaken by the Jupyter notebook, which allows you to break your scripts up into individual code cells that you can run and bugfix on the fly, independently of the surrounding code.
 
-Where most programming languages rely heavily on various kinds of bracketing to indicate hierarchy, Python replaces some of this with tab indentations. Thus whereas PHP might have
+Where most programming languages rely heavily on various kinds of bracketing to indicate hierarchy, Python replaces some of this with tab (or four-space) indentations. Thus whereas PHP might have
 
 ```php
 foreach($x as $y)
@@ -61,11 +61,11 @@ for y in x:
 	index[y] = z
 ```
 
-This means that whereas tabbing is just a matter of convention in PHP, it is of crucial importance in Python that you engage in exact tabbing, in multiples of four spaces. (If your editor is equipped with a validation service, it will try to indent correctly whenever you hit return, but it cannot do all your work for you.) Also note that Python lacks the semicolons signalling the conclusion of a statement in PHP, but it has colons to announce that a subordinate hierarchy follows.
+This means that whereas tabbing is just a matter of convention in PHP, it is of crucial importance in Python that you engage in exact tabbing, in multiples of four spaces. (If your editor is equipped with a validation service, it will try to indent correctly whenever you hit return, but it cannot do all your work for you. Also, you may encounter errors if mixing space-formatted indentation with tab-formatted indentation! In VS Code, just use Tab and it will interpret it as four spaces.) Also note that Python lacks the semicolons signalling the conclusion of a statement in PHP, but it has colons to announce that a subordinate hierarchy follows.
 
 # Libraries
 
-Python relies heavily on user-contributed libraries. A library, or package, is just a collection of Python scripts meeting certain standards of quality and utility to have been admitted into the pool of packages made available by the package managers (`pip` and `conda`). Some packages are considered so crucial that they ship with Python itself --- they are part of the Python Standard Library; for instance, `math` for mathematical operations, `os` for disk access, and `json` for loading and storing data containers. But most libraries have to be installed first, and all have to be imported before they can be used. The [Software guide](https://github.com/langeslag/ehtc/blob/main/doc/Software.pdf) describes the process of installing libraries; here we may just illustrate how to import libraries before using them.
+Python relies heavily on user-contributed libraries. A library, or package, is just a collection of Python scripts meeting certain standards of quality and utility to have been admitted into the pool of packages made available by the package managers (`pip` and `conda`). Some packages are considered so crucial that they ship with Python itself --- they are part of the Python Standard Library; for instance, `math` for mathematical operations, `os` for disk access, and `json` for loading and storing data containers. But most libraries have to be installed first, and all have to be imported before they can be used. The [software guide](https://github.com/langeslag/ehtc/blob/main/doc/Software.pdf) describes the process of installing libraries; here we may just illustrate how to import libraries before using them.
 
 It is conventional to import all the libraries you expect to use at the top of your script or notebook. Take special note of the three different ways of importing libraries, and how to access them thereafter.
 
@@ -155,7 +155,7 @@ Markdown is an efficient structured text format which it is well worth mastering
 	
 	## Lower-level headings receive two
 	
-	Paragraphs are ended by double line breaks.
+	Paragraphs are ended by double newlines.
 	
 	Like so.
 	
