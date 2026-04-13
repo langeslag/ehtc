@@ -51,6 +51,8 @@ To install Visual Studio Code, look for it in your operating system's package ma
 
 Once you have it installed, launch Code and open the extensions manager (`Ctrl+Shift+X`) to install the extensions entitled Python (by Microsoft), Python Environments (by Microsoft; agree to install the pre-release if no final release is available), and Jupyter (by Microsoft). _If you cannot find Python Environments, it may be because you have installed the open-source implementation of VS Code rather than the proprietary Microsoft release. You can try installing another Python environments extension, such as that by Solarzano-JuanJose, and see how you fare._ You now have what you need to write Python in VS Code; let's get you the course materials next.
 
+_As you start using it, VS Code may prompt you to install the `ipykernel` extension. If so, assent._
+
 # Git
 
 I strongly advise you to set up Git, not only because I will be distributing my code examples and documentation through a [repository](https://github.com/langeslag/ehtc) hosted on GitHub, but also because you will be running code that clones additional repositories. To [install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [configure](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) Git, follow the instructions in [the Pro Git book](https://git-scm.com/book/en/v2). Once you have it installed, configuration can be as simple as entering two lines like the following into your terminal (or entering your name and email into a graphical configuration assistant):
@@ -62,13 +64,19 @@ git config --global user.email your.email@stud.uni-goettingen.de
 
 # Python Package Management
 
-For Python package management, you have three options available to you. If you lack experience working on the command line, you may use Anaconda Navigator to install and manage libraries in the Environments tab, or in your Jupyter notebook you can issue commands like `!conda install matplotlib` directly within your code cells to install the library called `matplotlib`.
+For Python package management using the Anaconda distribution, you have three options available to you. If you lack experience working on the command line, you may use Anaconda Navigator to install and manage libraries in the Environments tab, or in your Jupyter notebook you can issue commands like `%conda install matplotlib` directly within your code cells to install the library called `matplotlib` (though you may experience issues with that on Windows).
 
-Traditionally, however, Python package management is done from the command line, using the command `conda install` (or `pip install` if that's the route you have chosen). To go this way from within VS Code, with our repository folder open, select "Terminal" and "New Terminal" (or Ctrl+Shift+`` ` `` on US keyboards) to open a terminal window with the current folder as its working directory. You can install individual packages by issuing commands like `conda install matplotlib`. If this does not work, verify that VS Code is talking to Anaconda by checking (1) that you have activated one of your conda kernels (via the button in the top right); (2) that VS Code has the Python Environments extension installed.
+Traditionally, however, Python package management is done from the command line, using the command `conda install` (or `pip install` if that's the route you have chosen). You can access a terminal from within VS Code, but if you are using Windows, integrating Anaconda shells into VS Code appears to be a bit of a headache, so the easiest solution is to (install and) run any one of the terminal/shell options (PowerShell, `CMD.exe`, etc.) you can find in Anaconda Navigator. You can then install individual packages by issuing commands like `conda install matplotlib`.
 
-If in your work you ever encounter an error along the lines of `ModuleNotFoundError: No module named 'gensim'`, simply install the missing package (`conda install gensim` on the command line, or `!conda install gensim` in your notebook) and get on with your work.
+If in your work you ever encounter an error along the lines of `ModuleNotFoundError: No module named 'gensim'`, simply install the missing package (`conda install gensim` on the command line, or `%conda install gensim` in your notebook) and get on with your work.
 
 Remember that Python packages are only available within the Python environment in which they were installed; so ensure the the kernel selected in the top right corner of VS Code corresponds to the environment to which you installed your libraries.
+
+There are a few complications with package management using `conda`. First, some packages are distributed through distribution sources (or "channels") other than `defaults`, and these you will not find by giving the package name as an argument to `conda install`, or by searching the package database in Anaconda Navigator. Specifically, to install `pyLDAvis`, issue `conda install conda-forge::pyldavis`.
+
+Second, some packages are not available through `conda` at all, so you will have to install them using `pip`. Specifically, `pip install pymediawiki`.
+
+And finally, a small number of demo notebooks used in this course rely on an old version of CLTK, which in turn requires that you install an old version (3.9) of Python. If you have need of this library, first set up an environment running Python 3.9, then install CLTK by issuing `pip install cltk==1.5.0`.
 
 # Cloning the Course Repository
 
